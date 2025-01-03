@@ -44,10 +44,10 @@ def submit():
         else DEFAULT_AVATAR
     )
     profile_location = (
-        gravatar_data["entry"][0].get("currentLocation") if gravatar_data.get("entry") else location
+        gravatar_data["entry"][0].get("currentLocation") if gravatar_data.get("entry") and gravatar_data["entry"][0].get("location") else location
     )
     profile_bio = (
-        gravatar_data["entry"][0].get("aboutMe") if gravatar_data.get("entry") else bio
+        gravatar_data["entry"][0].get("aboutMe") if gravatar_data.get("entry") and gravatar_data["entry"][0].get("description") else bio
     )
 
     return render_template(
