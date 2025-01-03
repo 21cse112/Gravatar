@@ -1,0 +1,5 @@
+# virtual env
+/venv
+
+# removing the test files
+/test
